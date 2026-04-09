@@ -1,0 +1,26 @@
+<main style="max-width: 900px; margin: 40px auto; font-family: 'Segoe UI', sans-serif; padding: 0 20px;">
+  <header style="border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px;">
+    <h1 style="margin: 0; color: #222;">Lab Hub / Max1muth</h1>
+    <p style="color: #666;">Коллекция учебных проектов и визуализаций</p>
+  </header>
+
+  <section style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+    <div *ngFor="let p of projects" 
+         style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; transition: 0.2s; background: #fafafa;">
+      <h2 style="margin-top: 0; font-size: 1.2rem; color: #0056b3;">{{ p.title }}</h2>
+      <p style="font-size: 0.9rem; color: #444; min-height: 50px;">{{ p.desc }}</p>
+      
+      <div style="margin: 15px 0;">
+        <span *ngFor="let t of p.tech" 
+              style="display: inline-block; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px; color: #555;">
+          #{{ t }}
+        </span>
+      </div>
+
+      <a [href]="p.url" 
+         style="text-decoration: none; color: white; background: #333; padding: 8px 16px; border-radius: 4px; font-size: 0.9rem; display: inline-block;">
+        Перейти к проекту →
+      </a>
+    </div>
+  </section>
+</main>
